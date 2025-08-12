@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Premium Green Grapes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #219150;
+      --primary-light: #2ec66c;
+      --secondary: #1a3021;
+      --text: #222;
+      --text-light: #555;
+      --bg: #f8faf8;
+      --white: #fff;
+      --card: #f5f6f6;
+      --border: #e0e6e2;
+      --accent: #76e05f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+     /* padding-top: 100px;  */
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto 0 auto;
+    }
+
+    
+    /* /////////////////////////////////////////////////// */
+
+
+
+    /* /////////////////////////////////////////////////// */
+    /* Product Hero */
+    .product-hero {
+      display: flex;
+      gap: 40px;
+      background: none;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .product-image {
+      background: var(--white);
+      box-shadow: 0 6px 32px rgba(60,60,60,0.14);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 360px;
+      min-width: 240px;
+      max-width: 95vw;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+    }
+    .product-info {
+      flex: 1;
+      min-width: 250px;
+    }
+    .product-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .product-subtitle {
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .rating {
+      color: gold;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+    .product-price {
+      color: var(--primary);
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .product-price span {
+      color: var(--text-light);
+      font-weight: normal;
+      font-size: 1rem;
+      margin-left: 5px;
+      text-decoration: line-through;
+    }
+    .product-desc {
+      color: var(--text-light);
+      margin: 20px 0;
+    }
+    .product-meta {
+      font-size: 1em;
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+    .product-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .btn-main, .btn-secondary {
+      padding: 12px 32px;
+      border-radius: 25px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-main {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn-main:hover { background: var(--primary-light);}
+    .btn-secondary {
+      background: none;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-secondary:hover { background: var(--primary-light); color: var(--white);}
+    /* Features */
+    .features-section {
+      padding: 40px 0 10px 0;
+      text-align: center;
+    }
+    .features-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .features-list {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: 13px;
+      box-shadow: 0 2px 8px rgba(30,70,60,0.07);
+      padding: 26px 22px;
+      width: 210px;
+      min-width: 180px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .feature-desc {
+      font-size: 0.97rem;
+      color: var(--text-light);
+    }
+    /* Nutrition & Benefits */
+    .nutrition-section {
+      padding: 44px 0 8px 0;
+      background: none;
+      text-align: center;
+    }
+    .nutrition-title {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+    .nutrition-desc {
+      color: var(--text-light);
+      margin-bottom: 30px;
+    }
+    .nutrition-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .nutrition-card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 22px 24px;
+      min-width: 190px;
+      width: 230px;
+      box-shadow: 0 2px 10px rgba(52,130,81,0.09);
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .nutrition-card h4 {
+      color: var(--primary);
+      margin-bottom: 9px;
+      font-size: 1.08em;
+    }
+    .nutrition-card ul {
+      margin-left: 1.2em;
+      font-size: 1em;
+      color: var(--text);
+    }
+    .nutrition-facts {
+      background: var(--white);
+      box-shadow: 0 1px 9px rgba(80,110,90,0.07);
+      border-radius: 9px;
+      padding: 23px 29px;
+      max-width: 340px;
+      margin: 0 auto 40px auto;
+      font-size: 1em;
+    }
+    .nutrition-facts-title {
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 1.09em;
+    }
+    .nutrition-facts-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .nutrition-facts-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .nutrition-facts-table td {
+      padding: 6px 0;
+      color: var(--text-light);
+    }
+    .nutrition-facts-table td:first-child {
+      color: var(--text);
+      font-weight: 500;
+    }
+    /* Footer and CTA Section */
+    .footer-section {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 30px 0 0 0;
+      margin-top: 70px;
+    }
+    .footer-highlight {
+      display: flex;
+      justify-content: center;
+      gap: 46px;
+      flex-wrap: wrap;
+      text-align: center;
+      border-bottom: 1px solid #274836;
+      padding-bottom: 30px;
+      margin-bottom: 0;
+    }
+    .footer-highlight div {
+      margin: 15px 0;
+    }
+    .footer-highlight-icon {
+      font-size: 1.55em;
+      margin-bottom: 4px;
+      color: var(--accent);
+      display: block;
+    }
+    .footer-highlight-text {
+      font-size: 1.01em;
+    }
+    .cta-bar {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--primary-light) 100%);
+      color: var(--white);
+      margin: 0;
+      padding: 30px 0 32px 0;
+      text-align: center;
+    }
+    .cta-bar strong {
+      font-size: 1.3em;
+      display: block;
+      margin-bottom: 9px;
+      font-weight: 800;
+    }
+    .cta-bar p {
+      margin-bottom: 18px;
+      opacity: 0.97;
+    }
+    .footer-links-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 30px 5% 36px 5%;
+      font-size: 0.98em;
+      background: var(--secondary);
+      color: var(--white);
+    }
+    .footer-section ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .footer-section a { color: #c1eecb; }
+    .footer-section a:hover { text-decoration: underline; }
+    .footer-bottom {
+      text-align: center;
+      color: #adcdbe;
+      padding: 13px 0 18px 0;
+      letter-spacing: 0.03em;
+      font-size: 0.97em;
+      background: var(--secondary);
+      border-top: 1px solid #274836;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .product-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .product-image {
+        width: 98vw;
+        height: 215px;
+        max-width: 99vw;
+        margin-bottom: 18px;
+      }
+      .product-info { width: 100%; }
+    }
+    @media (max-width: 650px) {
+      .product-hero { gap: 18px; }
+      .container { width: 100%; }
+      .features-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+      .nutrition-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .footer-links-section {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 4% 24px 4%;
+      }
+      .cta-bar { padding: 27px 0 22px 0; }
+    }
+    @media (max-width: 420px) {
+      body { font-size: 0.97em; }
+      .product-image { height: 135px; }
+      .feature-card, .nutrition-card { min-width: 140px; width: 98vw;}
+      .nutrition-facts { max-width: 99vw; padding: 14px 5px;}
+    }
+
+    /* Mobile First */
+.container {
+  width: 100%;
+  padding: 6.5em 1.5em;
+}
+.product-hero {                  /* stacks by default */
+  display: flex;
+  flex-direction: column;
+}
+.product-image, .product-info {
+  width: 100%;
+}
+
+/* Tablet and up */
+@media (min-width: 700px) {
+  .product-hero {
+    flex-direction: row;
+    gap: 2em;
+    align-items: start;
+  }
+  .product-image, .product-info {
+    width: 50%;
+  }
+}
+
+/* Desktop widescreen */
+@media (min-width: 1100px) {
+  .container { max-width: 1150px; margin: auto; }
+}
+
+/* Responsive images and text */
+.product-image img { width: 100%; max-width: 400px; height: auto; display: block; }
+
+  </style>
+</head>
+<body>
+    
+
+  <!-- HERO SECTION -->
+  <header class="hero-2">
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="img/Logo-nav.png" alt="Torna Farms Logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About-us.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <!-- <li><a href="#">Our Farmers</a></li> -->
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-btns">
+        <button class="btn brochure-btn">Request Brochure</button>
+        <a href="#"><img src="img/instagram.png" alt="Instagram" class="icon" /></a>
+        <a href="#"><img src="img/facebook.png" alt="Facebook" class="icon" /></a>
+      </div>
+
+      <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- <div class="overlay"></div> -->
+  </header>
+
+
+
+  <div class="container">
+    <!-- Product Hero -->
+    <!-- <section class="product-hero">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+            alt="Premium Green Grapes">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Premium<br>Green Grapes</div>
+        <div class="rating">★★★★★ <span style="font-size:0.98em; color: #999;">(124 reviews)</span></div>
+        <div class="product-price">$8.99 <span>$12.99</span></div>
+        <div class="product-desc">
+          Hand-picked premium green grapes bursting with natural sweetness. Perfect for snacking, mixing, or adding to your favorite recipes. Sustainably grown and harvested at peak ripeness!
+        </div>
+        <div class="product-meta">
+          <b>Origin:</b> California, USA <br>
+          <b>Harvest:</b> Fresh Daily
+        </div>
+        <div class="product-buttons">
+          <button class="btn-main">Add to Cart</button>
+          <button class="btn-secondary">Buy Now</button>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- Why Choose Section -->
+    <section class="features-section">
+      <div class="features-title">Why Choose Our Grapes?</div>
+      <div class="features-list">
+        <div class="feature-card">
+          <div class="feature-icon">🍃</div>
+          <div class="feature-title">100% Organic</div>
+          <div class="feature-desc">Grown without pesticides for natural flavor and safer snacking.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💚</div>
+          <div class="feature-title">Heart Healthy</div>
+          <div class="feature-desc">Rich in antioxidants that support cardiovascular wellness.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Energy Boost</div>
+          <div class="feature-desc">Natural grape sugars revitalize you throughout your day.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏅</div>
+          <div class="feature-title">Premium Quality</div>
+          <div class="feature-desc">Hand-selected at peak ripeness for taste, texture, and nutrition.</div>
+        </div>
+      </div>
+    </section>
+    <!-- Nutrition & Benefits -->
+    <section class="nutrition-section">
+      <div class="nutrition-title">Nutrition & Benefits</div>
+      <div class="nutrition-desc">Our grapes are packed with essential nutrients and offer numerous health benefits while delivering exceptional taste.</div>
+      <div class="nutrition-cards">
+        <div class="nutrition-card">
+          <h4>Nutritional</h4>
+          <ul>
+            <li>High in Vitamin C</li>
+            <li>Contains Antioxidants</li>
+            <li>Natural Electrolytes</li>
+            <li>Low Calorie Snack</li>
+          </ul>
+        </div>
+        <div class="nutrition-card">
+          <h4>Health Benefits</h4>
+          <ul>
+            <li>Supports Heart Health</li>
+            <li>Promotes Eye Health</li>
+            <li>Rejuvenates Healthy Skin</li>
+            <li>Aids Digestion</li>
+          </ul>
+        </div>
+        <div class="nutrition-card">
+          <h4>Culinary Uses</h4>
+          <ul>
+            <li>Perfect for Snacking</li>
+            <li>Great for Fruit Salads</li>
+            <li>Meal & Mixers</li>
+            <li>Juice or Smoothies</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nutrition-facts">
+        <div class="nutrition-facts-title">Nutrition Facts</div>
+        <table class="nutrition-facts-table">
+          <tr>
+            <td>Calories</td>
+            <td>62</td>
+          </tr>
+          <tr>
+            <td>Total Carbohydrates</td>
+            <td>16g</td>
+          </tr>
+          <tr>
+            <td>Dietary Fiber</td>
+            <td>1g</td>
+          </tr>
+          <tr>
+            <td>Sugars</td>
+            <td>15g</td>
+          </tr>
+          <tr>
+            <td>Vitamin C</td>
+            <td>16.3mg (18% DV)</td>
+          </tr>
+          <tr>
+            <td>Potassium</td>
+            <td>176mg</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </div>
+  <!-- Footer + CTA -->
+  <footer class="footer-section">
+    <!-- <div class="footer-highlight">
+      <div>
+        <div class="footer-highlight-icon">🚚</div>
+        <div class="footer-highlight-text">Free Shipping<br>on orders over $49</div>
+      </div>
+      <div>
+        <div class="footer-highlight-icon">🛡️</div>
+        <div class="footer-highlight-text">Quality Guarantee<br>100% satisfaction promise</div>
+      </div>
+      <div>
+        <div class="footer-highlight-icon">🔄</div>
+        <div class="footer-highlight-text">Easy Returns<br>30 day return policy</div>
+      </div>
+      <div>
+        <div class="footer-highlight-icon">💬</div>
+        <div class="footer-highlight-text">24/7 Support<br>Expert assistance always</div>
+      </div> -->
+    </div>
+    <div class="cta-bar">
+      <strong>Get 30% Off Your First Order</strong>
+      <p>Join thousands of satisfied customers who choose our premium grapes for their exceptional quality and taste.</p>
+      <button class="btn-main" style="margin-right:17px;">Order Now</button>
+      <button class="btn-secondary">Learn More</button>
+    </div>
+    <div class="footer-links-section">
+      <div>
+        <b>Fresh Grapes Co.</b><br>
+        Fresh, quality grapes delivered fresh to your table.<br>
+        Sustainably grown by expert farmers.
+      </div>
+      <div>
+        <b>Quick Links</b>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Produce</a></li>
+          <li><a href="#">Sustainability</a></li>
+        </ul>
+      </div>
+      <div>
+        <b>Customer Care</b>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Order Status</a></li>
+        </ul>
+      </div>
+      <div>
+        <b>Connect</b>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Newsletter Signup</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Fresh Grapes Co. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+  // const toggle = document.getElementById('navToggle');
+  // const menu = document.getElementById('navbarMenu');
+  // const actions = document.querySelector('.navbar-actions');
+  
+   const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    actions.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
